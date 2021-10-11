@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#contenedor{
+    width: 1000px;
+    height: 800px;
+    
+    margin: 0.5em auto;
+}
+
+.titulo {
+    color: #28501f;
+    font-weight: bolder;
+}
+
+header{
+    width: 100%;
+    height: 19%;
+    text-align: left;
+    background: #f0df4d;
+    border-radius: 1em;
+    margin: 0.5em;
+    border-radius: 1em;
+    color: #388659;
+}
+
+nav{
+    height: 10%;
+    text-align: center;
+    background: #f0df4d;
+    border-radius: 1em;
+    margin: 0.5em;
+}
+
+#contenido{
+    height: 60%;
+    background: white;
+    border-radius: 2em;
+}
+
+section {
+    height: 90%;
+    width: 65%;
+    background: #f0df4d;
+    float: left;
+    border-radius: 2em
+}
+
+.articulo1{
+    width: 90%;
+    height: 45%;
+    background: #7ebe70;
+    border-radius: 1em;
+    margin: 0.5em auto;
+    text-align: center;
+    padding: auto;
+    color: white;
+}
+.articulo2{
+    width: 90%;
+    height: 45%;
+    background: #7ebe70;
+    border-radius: 1em;
+    margin: 0.5em auto;
+    text-align: center;
+    padding: auto;
+    color: white;
+}
+.h2conestilo{
+    color:#7ebe70 ;
+}
+
+aside {
+    height: 90%;
+    width: 30%;
+    background: #f0df4d;
+    float: right;
+    border-radius: 2em;
+    padding: 0.5em;
+    
+}
+
+footer{
+    height: 20%;
+    background: #f0df4d;
+    border-radius: 2em;
+    margin: 0.5em;
+}
+/* Regla para acceder a los hipervinculos */ 
+#contenedor nav ul li{
+    display: inline-block;
+    padding: 1em;
+}
+
+#contenedor nav ul li a{
+    text-decoration: none;
+    font-family: fantasy;
+    font-size: 3em;
+    color: #28501f;
+}
+/* Seleccctor*/
+#contenedor nav ul li a:hover{
+    color: #7ebe70;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form Login</title>
+    <link rel="stylesheet" href="estilos/estilo.css">
+    <script rel="javascript" type="text/javascript" src="js/Script_prueba.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap-5.1.1-dist/css/bootstrap.min.css">
+    <script rel="javascript" type="text/javascript" src="bootstrap-5.1.1-dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+   <div class="login">
+       <img class="avatar" src="img/usuario.png" alt="usuario_saya">
+
+       <h1>Login Aqui</h1>
+       <form action="pagina_principal.html">
+           <!--usuario-->
+           <label for="username">Usuario</label>
+           <input type="text" placeholder="Ingrese su usuario" id="user">
+
+           <!--password-->
+           <label for="password"> Contraseña</label>
+           <input type="password" placeholder="Ingrese su contraseña" id="pass">
+
+           <select class="form-select" aria-label="Default select example" style="background-color: #050505; color: white;">
+            <option selected>Seleccione su rol</option>
+            <option value="1">Usuario de la app</option>
+            <option value="2">Administrador</option>
+          </select>
+          <br>
+          
+</script>
+
+           <input type="button" value="Iniciar Sesion" onclick="obtenerDatos()">
+           <a href="#">A perdido su contraseña?</a><br>
+           <a href="#">No tiene una cuenta?</a>
+
+       </form>
+
+   </div>
+    
+</body>
+</html>

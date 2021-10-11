@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.titulo {
+    color: #28501f;
+    font-weight: bolder;
+}
+
+
+
+
+.descripcion{
+        text-align: left;
+        background: #f0df4d;
+        border-radius: 1em;
+        margin: 0.5em;
+        border-radius: 1em;
+        color:#7ebe70 ;
+    
+}
+
+
+footer{
+    background: #f0df4d;
+    border-radius: 2em;
+    margin: 0.5em;
+}
+

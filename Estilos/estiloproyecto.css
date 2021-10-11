@@ -1,0 +1,82 @@
+@media (min-width:768px){
+    *{
+    margin:0;
+    padding:0;
+}
+#contenedor{
+    width:80%;
+    height: 100vh;
+    margin: 1em auto;
+
+}
+header{
+    height: 20%;
+    background:#595A4A;
+    border-radius: 1em;
+    margin: 1em;
+
+}
+nav{
+    height: 10%;
+    background: #c7ccb9;
+    border-radius: 1em;
+    margin: 0.5em;
+    text-align: center;
+}
+contenido{
+    height: 5
+    0%;
+    
+}
+
+
+#contenedor nav ul li{
+    display: inline-block;
+    padding: 1 em;
+
+}
+#contenedor nav ul li a{
+    text-decoration: none;
+    font-family: fantasy;
+    font-size: 2em;
+    color:rgb(0, 0, 0);
+
+
+}
+#contenedor nav ul li a:hover{
+    color:rgb(255, 255, 255);
+
+}
+
+#Registrarse{
+    color: rgb(218, 22, 22);
+    text-align: center;
+
+}
+#nombre{
+    text-align: center;
+}
+
+#apellidos{
+    text-align: center;
+}
+#clave{
+    text-align: center;
+
+}
+#ciudad{
+    text-align: center;
+
+}
+#email{
+    text-align: center;
+}
+#telefono{
+    text-align: center;
+
+}
+#fechanacimiento{
+    text-align: center;
+
+}
+}
