@@ -10,21 +10,7 @@
     font-weight: bolder;
 }
 
-#botonVerSaldo{
-    color: #f0e36f;
-    border-radius:160px;
-    border:10px solid #666;
-}
 
-#info{
-    height: 300px;
-    width: auto;
-    background: #f0e36f;
-    border-radius: 1em;
-    margin: 0.5em;
-    border-radius: 1em;
-    color:#7ebe70 ;
-}
 
 
 .descripcion{
@@ -44,3 +30,40 @@ footer{
     margin: 0.5em;
 }
 
+#vistaPerfil{
+    height: 90%;
+    width: 75%;
+    float: left;
+    background:#f0e36f;
+    border-radius: 1em;
+    margin: 0.5em;
+    border-radius: 1em;
+    color:#7ebe70 ;
+    border: 5px solid #f1e681;
+}
+
+#ladoSaldo{
+    height: 90%;
+    width: 20%;
+    float: right;
+    background:#f0e36f;
+    border-radius: 1em;
+    border: 5px solid #f1e681;
+    color:#7ebe70 ;
+}
+
+#botonVerSaldo{
+    color: #f0e36f;
+    border-radius:160px;
+    border:10px solid #666;
+}
+
+#info{
+    height: 700px;
+    width: auto;
+    background: #f0e36f;
+    border-radius: 1em;
+    margin: 0.5em;
+    border-radius: 1em;
+    color:#7ebe70 ;
+}
