@@ -10,12 +10,26 @@
     font-weight: bolder;
 }
 
+#botonVerSaldo{
+    color: #f0e36f;
+    border-radius:160px;
+    border:10px solid #666;
+}
 
+#info{
+    height: 300px;
+    width: auto;
+    background: #f0e36f;
+    border-radius: 1em;
+    margin: 0.5em;
+    border-radius: 1em;
+    color:#7ebe70 ;
+}
 
 
 .descripcion{
         text-align: left;
-        background: #f0df4d;
+        background: #f0e36f;
         border-radius: 1em;
         margin: 0.5em;
         border-radius: 1em;
