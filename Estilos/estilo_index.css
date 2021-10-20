@@ -14,6 +14,7 @@
 
 
 .descripcion{
+        height: 10%;
         text-align: left;
         background: #f0e36f;
         border-radius: 1em;
@@ -58,12 +59,19 @@ footer{
     border:10px solid #666;
 }
 
+#cabecera{
+    height: 11%;
+}
 #info{
-    height: 1200px;
+    height: 80%;
     width: auto;
     background: #f0e36f;
     border-radius: 1em;
     margin: 0.5em;
     border-radius: 1em;
     color:#7ebe70 ;
+}
+
+#contenedor{
+height: 190vh;
 }
