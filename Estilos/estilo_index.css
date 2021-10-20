@@ -10,7 +10,14 @@
     font-weight: bolder;
 }
 
-
+.registro{
+    text-align: left;
+    background: #f0e36f;
+    border-radius: 1em;
+    margin: 0.5em;
+    border-radius: 1em;
+    color:#7ebe70 ;
+}
 
 
 .descripcion{
@@ -66,4 +73,25 @@ footer{
     margin: 0.5em;
     border-radius: 1em;
     color:#7ebe70 ;
+}
+
+#contenido{
+    height: 350px;
+    width: auto;
+    background: #f0e36f;
+    border-radius: 1em;
+    margin: 0.5em;
+    color:#7ebe70;
+}
+
+#vistaPerfil1{
+    height: 90%;
+    width: auto;
+    
+    background:#f0e36f;
+    border-radius: 2em;
+    margin: 1em;
+    border-radius: 1em;
+    color:#7ebe70 ;
+    border: 10px solid #f1e681;
 }
