@@ -15,7 +15,7 @@
 <body>
   <nav class="navbar navbar-expand-sm navbar-light rounded-pill" style="background-color: #f0e36f;">
     <div class="container-fluid">
-      <a class="navbar-brand" title="inicio" href="index.html"><img src="Img/logo.png" width="200" height="100" alt="Pagina de inicio" /></a>
+      <a class="navbar-brand" title="inicio" href="index.html?id=1" ><img src="Img/logo.png" width="200" height="100" alt="Pagina de inicio" /></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
         data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
         aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
             <a class="nav-link active" aria-current="" href="Login.html">Iniciar sesion</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Proyecto.html">Registrese</a>
+            <a class="nav-link" href="RegistrarCliente.html">Registrese</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="Perfil_Usuario.html">Perfil</a>
@@ -42,27 +42,44 @@
         <div id="vistaPerfil">
           <form class="row g-3">
             <div class="col-md-12">
-              <label for="inputEmail4" class="form-label">Email</label>
+              <div class="col-12">
+                <label for="inputAddress" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Ingrese el nombre completo" disabled>
+              </div>
+              <div class="col-12">
+                <label for="inputAddress" class="form-label">Tipo de documento</label>
+                <select class="form-select" aria-label="Default select example" disabled>
+                  <option selected>Tipo de documento</option>
+                  <option value="1">Cedula de ciudadania</option>
+                  <option value="2">Tarjeta de identidad</option>
+                  <option value="3">Cedula de extranjeria</option>
+                </select>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">Numero de documento</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" disabled>
+                </div>
+              </div>
+              <label for="inputEmail4" class="form-label">Correo</label>
               <input type="email" class="form-control" id="inputEmail4" disabled>
             </div>
             <div class="col-md-12">
-              <label for="inputPassword4" class="form-label">Password</label>
-              <input type="password" class="form-control"  disabled>
-            </div>
-            <div class="col-md-12">
-              <label for="inputPassword4" class="form-label">Password</label>
+              <label for="inputPassword4" class="form-label">Contraseña</label>
               <input type="password" class="form-control"  disabled>
             </div>
             <div class="col-12">
-              <label for="inputAddress" class="form-label">Address</label>
+              <label for="inputAddress" class="form-label">Telefono</label>
               <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" disabled>
             </div>
             <div class="col-12">
-              <label for="inputAddress2" class="form-label">Address 2</label>
+              <label for="inputAddress" class="form-label">Direccion</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" disabled>
+            </div>
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">Sexo</label>
               <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
             </div>
             <div class="col-md-12">
-              <label for="inputCity" class="form-label">City</label>
+              <label for="inputCity" class="form-label">Saldo</label>
               <input type="text" class="form-control" id="inputCity">
             </div>
             <div class="col-md-12">
@@ -85,7 +102,10 @@
               </div>
             </div>
             <div class="col-12">
-              <button type="submit" class="btn btn-primary">Sign in</button>
+              $id
+              <button type="submit" class="btn btn-primary">Actualizar Pagina</button>
+              <button type="submit" class="btn btn-primary">Editar Perfil</button>
+              <button type="submit" class="btn btn-primary" display:none>Guardar cambios</button>
             </div>
           </form>
       </div>

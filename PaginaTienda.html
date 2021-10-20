@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal con CSS</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap-5.1.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="Estilos/estilo_index.css">
+    <script rel="javascript" type="text/javascript" src="bootstrap-5.1.1-dist/js/bootstrap.min.js"></script>
+    
+    
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm navbar-light rounded-pill" style="background-color: #f0e36f;">
+    <div class="container-fluid">
+      <a class="navbar-brand" title="inicio" href="index.html?id=1" ><img src="Img/logo.png" width="200" height="100" alt="Pagina de inicio" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="" href="Login.html">Iniciar sesion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="RegistrarCliente.html">Registrese</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Perfil_Usuario.html">Perfil</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    <div id="info">
+            
+        <div id="vistaPerfil">
+          <form class="row g-3">
+            <div class="col-md-12">
+              <div class="col-12">
+                <label for="inputAddress" class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="Ingrese el nombre completo" disabled>
+              </div>
+              <div class="col-12">
+                <label for="inputAddress" class="form-label">Tipo de documento</label>
+                <select class="form-select" aria-label="Default select example" disabled>
+                  <option selected>Tipo de documento</option>
+                  <option value="1">Cedula de ciudadania</option>
+                  <option value="2">Tarjeta de identidad</option>
+                  <option value="3">Cedula de extranjeria</option>
+                </select>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">Numero de documento</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" disabled>
+                </div>
+              </div>
+              <label for="inputEmail4" class="form-label">Correo</label>
+              <input type="email" class="form-control" id="inputEmail4" disabled>
+            </div>
+            <div class="col-md-12">
+              <label for="inputPassword4" class="form-label">Contraseña</label>
+              <input type="password" class="form-control"  disabled>
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Telefono</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" disabled>
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Direccion</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" disabled>
+            </div>
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">Sexo</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-12">
+              <label for="inputCity" class="form-label">Saldo</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="col-md-12">
+              <label for="inputState" class="form-label">State</label>
+              <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              $id
+              <button type="submit" class="btn btn-primary">Actualizar Pagina</button>
+              <button type="submit" class="btn btn-primary">Editar Perfil</button>
+              <button type="submit" class="btn btn-primary" display:none>Guardar cambios</button>
+            </div>
+          </form>
+      </div>
+            
+             <div id="ladoSaldo">
+               <br><br><br><br><br><br><br><br>
+             <button id="botonVerSaldo" class="btn btn-primary"  style="float: right; background-color: #f0e36f;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> <img src="Img/verSaldo.png" alt="Cargando" width="150px" height="150"></button>
+
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                  <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  ...
+                </div>
+              </div>
+            </div>
+    </div>
+    <div>
+      <div class="descripcion">
+          <h1 class="titulo" style="text-align: center;"> CONTÁCTENOS </h1>
+          <br><h2  style="text-align: center;"> CORREO: SALDOYA!@GMAIL.COM </h2>
+          <br><h2  style="text-align: center;"> TWITTER: @SALDOYA! </h2>
+        </div>
+    </div>
+</body>
+</html>

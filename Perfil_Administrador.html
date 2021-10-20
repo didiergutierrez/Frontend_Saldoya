@@ -27,7 +27,7 @@
             <a class="nav-link active" aria-current="" href="Login.html">Iniciar sesion</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Proyecto.html">Registrese</a>
+            <a class="nav-link" href="RegistrarCliente.html">Registrese</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="Perfil_Usuario.html">Perfil</a>
@@ -37,17 +37,80 @@
     </div>
   </nav>
   
-    <div >
+    <div id="info">
             
-             Perfil del Administrador
-    
-      <div>
-        <div class="descripcion">
-            <h1 class="titulo" style="text-align: center;"> CONTÁCTENOS </h1>
-            <br><h2  style="text-align: center;"> CORREO: SALDOYA!@GMAIL.COM </h2>
-            <br><h2  style="text-align: center;"> TWITTER: @SALDOYA! </h2>
-          </div>
+        <div id="vistaPerfil">
+          <form class="row g-3">
+            <div class="col-md-12">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" disabled>
+            </div>
+            <div class="col-md-12">
+              <label for="inputPassword4" class="form-label">Password</label>
+              <input type="password" class="form-control"  disabled>
+            </div>
+            <div class="col-md-12">
+              <label for="inputPassword4" class="form-label">Password</label>
+              <input type="password" class="form-control"  disabled>
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" disabled>
+            </div>
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">Address 2</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-12">
+              <label for="inputCity" class="form-label">City</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="col-md-12">
+              <label for="inputState" class="form-label">State</label>
+              <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+          </form>
       </div>
+            
+             <div id="ladoSaldo">
+               <br><br><br><br><br><br><br><br>
+             <button id="botonVerSaldo" class="btn btn-primary"  style="float: right; background-color: #f0e36f;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"> <img src="Img/verSaldo.png" alt="Cargando" width="150px" height="150"></button>
+
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                  <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  ...
+                </div>
+              </div>
+            </div>
+    </div>
+    <div>
+      <div class="descripcion">
+          <h1 class="titulo" style="text-align: center;"> CONTÁCTENOS </h1>
+          <br><h2  style="text-align: center;"> CORREO: SALDOYA!@GMAIL.COM </h2>
+          <br><h2  style="text-align: center;"> TWITTER: @SALDOYA! </h2>
+        </div>
     </div>
 </body>
 </html>
