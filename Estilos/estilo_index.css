@@ -21,7 +21,7 @@
 
 
 .descripcion{
-        height: 10%;
+        height: 18%;
         text-align: left;
         background: #f0e36f;
         border-radius: 1em;
@@ -51,9 +51,10 @@ footer{
 }
 
 #ladoSaldo{
-    height: 90%;
-    width: 20%;
-    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     background:#f0e36f;
     border-radius: 1em;
     border: 5px solid #f1e681;
@@ -70,7 +71,7 @@ footer{
     height: 11%;
 }
 #info{
-    height: 80%;
+    height: 70%;
     width: auto;
     background: #f0e36f;
     border-radius: 1em;
@@ -94,7 +95,6 @@ height: 190vh;
 #vistaPerfil1{
     height: 90%;
     width: auto;
-    
     background:#f0e36f;
     border-radius: 2em;
     margin: 1em;
