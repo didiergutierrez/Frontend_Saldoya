@@ -79,7 +79,6 @@ function getUrlParameters(parameter, staticURL, decode){
         $.get(endpoint,function(cliente){
             userBD=cliente.cedula;
             passBD=cliente.contraseña;
-            console.log(userBD+"    "+passBD)
             alert("Contraseña ingresada: "+pass+"  usuario ingresado: "+user+"  usuario "+userBD);
             if(userBD==user && pass==passBD){
                 alert("Datos Correcto....Iniciando sesion")
@@ -90,26 +89,14 @@ function getUrlParameters(parameter, staticURL, decode){
         })
     }
     else if(parseInt(seleccion,10)==2){
-
-    }
-    else{
-       
-    }
-
-
-
-    
-    if (parseInt(seleccion,10)==1){
-        
-        
-        
-
-    }
-    else if(parseInt(seleccion,10)==2){
         alert("Sus datos de inicio de seccion son los siguientes: \nUsuario "+user+"\nContraseña: "+pass);
         alert("Se ha iniciado sesion.")
         window.location="perfil_Administrador.html?id="+user;
-
+    }
+    else if(parseInt(seleccion,10)==3){
+        alert("Sus datos de inicio de seccion son los siguientes: \nUsuario "+user+"\nContraseña: "+pass);
+        alert("Se ha iniciado sesion.")
+        window.location="perfil_Administrador.html?id="+user;
     }
     else{
         alert("No has seleccionado rol");
@@ -118,8 +105,8 @@ function getUrlParameters(parameter, staticURL, decode){
         alert(idParameter)
         console.log(idParameter)
         window.location="Login.html?id="+user;
-
     }
+
 
     })
 })
