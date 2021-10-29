@@ -31,6 +31,9 @@
     
 }
 
+#perfil{
+    cursor:pointer;
+}
 
 footer{
     background: #f0df4d;
@@ -50,11 +53,30 @@ footer{
     border: 5px solid #f1e681;
 }
 
+#formulario{
+    
+    height: 90%;
+    width: 95%;
+    background:#f0e36f;
+    border-radius: 1em;
+    margin: 0.5em;
+    border-radius: 1em;
+    color:#7ebe70 ;
+    border: 5px solid #f1e681;
+}
+
+#itemsForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
 #ladoSaldo{
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    height: 90%;
     background:#f0e36f;
     border-radius: 1em;
     border: 5px solid #f1e681;

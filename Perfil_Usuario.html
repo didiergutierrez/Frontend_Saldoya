@@ -22,7 +22,7 @@
     <div id="cabecera">
       <nav class="navbar navbar-expand-sm navbar-light rounded-pill" style="background-color: #f0e36f;">
         <div class="container-fluid">
-          <a class="navbar-brand" title="inicio" href="index.html?id=1&nombre=12"><img src="Img/logo.png" width="200" height="100"
+          <a class="navbar-brand" title="inicio" id="inicio"><img src="Img/logo.png" width="200" height="100"
               alt="Pagina de inicio" /></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,6 +74,12 @@
             <label for="inputPassword4" class="form-label">Contraseña</label>
             <input id="contraseña" type="password" class="form-control" disabled>
           </div>
+          <div id="nuevaContraseña" class="col-md-12" style="display: none;">
+            <label for="inputPassword4" class="form-label">Nueva Contraseña</label>
+            <input id="contraseña" type="password" class="form-control" placeholder="Ingrese la nueva contraseña">
+            <label for="inputPassword4" class="form-label">Confirmar Contraseña</label>
+            <input id="contraseña" type="password" class="form-control" placeholder="Por favor digite su nueva contraseña">
+          </div>
           <div class="col-12">
             <label for="inputAddress" class="form-label">Telefono</label>
             <input type="text" class="form-control" id="telefono" placeholder="Por favor ingrese su telefono" disabled>
@@ -93,8 +99,9 @@
 
           
           <div class="col-12">
-            <button id="editar" type="submit" class="btn btn-primary">Editar Perfil</button>
+            <button id="editar" type="button" class="btn btn-primary">Editar Perfil</button>
             <button id="guardarCambios" type="submit" class="btn btn-primary">Guardar cambios</button>
+            <button id="cerrarSesion" type="button" class="btn btn-primary">Cerrar sesion</button>
           </div>
         </form>
       </div>
@@ -111,11 +118,10 @@
           </div>
           <div class="offcanvas-body">
             <div class="col-12">
-              <label for="inputAddress" class="form-label">Direccion</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Por favor ingrese su direccion" disabled>
+              <label for="inputAddress" class="form-label">Tu saldo es de:</label>
+              <input type="text" class="form-control" id="saldo" disabled>
             </div> <div class="col-12">
-              <label for="inputAddress" class="form-label">Direccion</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Por favor ingrese su direccion" disabled>
+              <button id="cerrarSesion" type="button" class="btn btn-primary">Retirar</button>
             </div>
           </div>
         </div>

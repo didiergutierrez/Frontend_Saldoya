@@ -19,25 +19,18 @@ function getUrlParameters(parameter, staticURL, decode){
 
 $().ready(function(){
     var urlactual=window.location;
-    var user = getUrlParameters("id", urlactual, true);
+    try{
+        var user = getUrlParameters("id", urlactual, true);
+    }
+    catch{
+        user=false;
+    }
     if(user!=false){
         $("#registrarse").hide();
         $("#login").hide();
         $("#guardarCambios").hide();
-    }
-    var endpoint="http://localhost:8080/cliente/"+user;
+        var endpoint="http://localhost:8080/cliente/"+user;
     $.get(endpoint,function(cliente){
-        /*"id":1,
-        "cedula":1026301447,
-        "correo":"digegu0532@gmail.com",
-        "tipoDocumento":"CC",
-        "contraseña":"didier123",
-        "nombreCompleto":"Didier Gerardo Gutierrez Perez",
-        "numeroCelular":"3185288242",
-        "direccion":"Calle 1",
-        "sexo":"Masculino",
-        "saldo":0
-        */
         Nombre=cliente.nombreCompleto;
         tipoDocumento=cliente.tipoDocumento;
         correo=cliente.correo;
@@ -45,6 +38,7 @@ $().ready(function(){
         telefono=cliente.numeroCelular;
         direccion=cliente.direccion;
         sexo=cliente.sexo;
+        saldo=cliente.saldo;
         alert("Bienvenido "+Nombre);
 
         $("#NombreCliente").val(Nombre);
@@ -62,6 +56,7 @@ $().ready(function(){
         $("#contraseña").val(contraseña);
         $("#telefono").val(telefono);
         $("#direccion").val(direccion);
+        $("#saldo").val("$"+saldo);
         if(sexo="masculino"){
             $("#sexo option[value='"+1+"']").attr("selected", true);
         }
@@ -73,6 +68,12 @@ $().ready(function(){
         }
        
     })
+    }
+    else{
+        $("#perfil").hide();
+        alert("no ha iniciado sesion");
+    }
+    
  });
 
  $(function(){
@@ -83,13 +84,29 @@ $().ready(function(){
         var rol = getUrlParameters("rol", urlactual, true);
         window.location="Perfil_Usuario.html?id="+user+"&rol="+rol;
          })
+    
+    $("#inicio").on("click",function(){
+        var urlactual=window.location;
+        var user = getUrlParameters("id", urlactual, true);
+        var rol = getUrlParameters("rol", urlactual, true);
+        window.location="index.html?id="+user+"&rol="+rol;
+         })
 
-    $("#editar").on("click",function(event){
-        event.preventDefault()
+    $("#cerrarSesion").on("click",function(){
+        window.location="index.html";
+    })
+
+    $("#editar").on("click",function(){
         $("#correo").attr("disabled",false);
         $("#contraseña").attr("disabled",false);
         $("#telefono").attr("disabled",false);
         $("#direccion").attr("disabled",false);
         $("#sexo").attr("disabled", false);
-            })
+        $("#guardarCambios").show();
+        $("#nuevaContraseña").show();
+        $("#editar").hide();
+        $("#info").css("height","80%");
+
+
+        })
 });
