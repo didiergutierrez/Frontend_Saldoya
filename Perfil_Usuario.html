@@ -39,6 +39,7 @@
               <li class="nav-item">
                 <a id="perfil" class="nav-link">Perfil</a>
               </li>
+              <input type="text" name="variableOculta" id="id" value="" style="display: none;">
             </ul>
           </div>
         </div>
@@ -76,9 +77,9 @@
           </div>
           <div id="nuevaContraseña" class="col-md-12" style="display: none;">
             <label for="inputPassword4" class="form-label">Nueva Contraseña</label>
-            <input id="contraseña" type="password" class="form-control" placeholder="Ingrese la nueva contraseña">
+            <input id="contraseña1" type="password" class="form-control" placeholder="Ingrese la nueva contraseña">
             <label for="inputPassword4" class="form-label">Confirmar Contraseña</label>
-            <input id="contraseña" type="password" class="form-control" placeholder="Por favor digite su nueva contraseña">
+            <input id="contraseña2" type="password" class="form-control" placeholder="Por favor digite su nueva contraseña">
           </div>
           <div class="col-12">
             <label for="inputAddress" class="form-label">Telefono</label>
@@ -119,7 +120,10 @@
           <div class="offcanvas-body">
             <div class="col-12">
               <label for="inputAddress" class="form-label">Tu saldo es de:</label>
-              <input type="text" class="form-control" id="saldo" disabled>
+              <div class="col-12">
+                <label class="col-2">$</label>
+                <input type="text" class="form-control col-8" id="saldoCliente" disabled>
+            </div>
             </div> <div class="col-12">
               <button id="cerrarSesion" type="button" class="btn btn-primary">Retirar</button>
             </div>

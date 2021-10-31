@@ -16,6 +16,7 @@ function getUrlParameters(parameter, staticURL, decode){
 
     if(!returnBool) return false;  
  }
+ 
 
 $().ready(function(){
     var urlactual=window.location;
@@ -31,6 +32,9 @@ $().ready(function(){
         $("#guardarCambios").hide();
         var endpoint="http://localhost:8080/cliente/"+user;
     $.get(endpoint,function(cliente){
+        var id;
+        id=cliente.id;
+        $("#id").val(id);
         Nombre=cliente.nombreCompleto;
         tipoDocumento=cliente.tipoDocumento;
         correo=cliente.correo;
@@ -42,10 +46,10 @@ $().ready(function(){
         alert("Bienvenido "+Nombre);
 
         $("#NombreCliente").val(Nombre);
-        if(tipoDocumento="CC"){
+        if(tipoDocumento=="CC"){
             $("#tipoDocumento option[value='"+1+"']").attr("selected", true);
         }
-        else if(tipoDocumento="TI"){
+        else if(tipoDocumento=="TI"){
             $("#tipoDocumento option[value='"+2+"']").attr("selected", true);
         }
         else{
@@ -56,11 +60,11 @@ $().ready(function(){
         $("#contraseña").val(contraseña);
         $("#telefono").val(telefono);
         $("#direccion").val(direccion);
-        $("#saldo").val("$"+saldo);
-        if(sexo="masculino"){
+        $("#saldoCliente").val(saldo);
+        if(sexo=="masculino"){
             $("#sexo option[value='"+1+"']").attr("selected", true);
         }
-        else if(sexo="femenino"){
+        else if(sexo=="femenino"){
             $("#tipoDocumento option[value='"+2+"']").attr("selected", true);
         }
         else{
@@ -75,6 +79,7 @@ $().ready(function(){
     }
     
  });
+
 
  $(function(){
     
@@ -106,7 +111,61 @@ $().ready(function(){
         $("#nuevaContraseña").show();
         $("#editar").hide();
         $("#info").css("height","80%");
-
-
         })
+
+    $("#guardarCambios").on("click",function(e){
+        e.preventDefault();
+        var id=$("#id").val();
+        var nombreCliente=$("#NombreCliente").val();
+        var tipoDocumento=$("#tipoDocumento").val();
+        var numeroDocumento=$("#NumeroDocumento").val();
+        var correo=$("#correo").val();
+        var contraseña=$("#contraseña").val();
+        var telefono=$("#telefono").val();
+        var direccion=$("#direccion").val();
+        var sexo=$("#sexo").val();
+        var saldo=$("#saldoCliente").val();
+        var contraseña1=$("#contraseña1").val();
+        var contraseña2=$("#contraseña2").val();
+        var td="";
+        if(tipoDocumento="1"){
+            $("#tipoDocumento option[value='"+1+"']").attr("selected", true);
+            td="CC";
+        }
+        else if(tipoDocumento="2"){
+            td="TI";
+        }
+        else{
+            td="CE";
+        }
+
+        if(contraseña1==contraseña2){
+            contraseña=contraseña1;
+        }
+        else{
+            alert("Las contraseñas no coinciden");
+        }
+
+        if(sexo=="1"){
+            sexo="Masculino"
+        }
+        else if (sexo=="2"){
+            sexo="Femenino"
+        }
+        else{
+            sexo="Otro"
+        }
+        alert(correo+"  "+numeroDocumento+"  "+telefono+"  "+saldo+"  "+contraseña+"  "+td+"  "+nombreCliente+"  "+direccion+"  "+sexo);
+
+        fetch("http://localhost:8080/cliente",{
+            method:"POST",
+            mode:"cors",
+            cache:"no-cache",
+            headers:{"Content-type":"application/json"},
+            body:JSON.stringify({id:id,cedula:numeroDocumento,correo:correo,direccion:td,contraseña:contraseña,saldo:saldo,tipoDocumento:tipoDocumento,sexo:sexo,nombreCompleto:nombreCliente,numeroCelular:telefono})
+
+        }).then(response=>response.json());
+
+
+    })
 });
