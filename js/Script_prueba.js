@@ -67,9 +67,15 @@ function getUrlParameters(parameter, staticURL, decode){
  $(function(){
     var userBD="";
     var passBD="";
+    $("#pass").keyup(function(event) {
+        if (event.keyCode === 13) {
+            $("#buscar").click();
+        }
+    });
     $("#buscar").on("click",function(){
     var user=document.getElementById("user").value;
     var pass=document.getElementById("pass").value;
+    
     var seleccion=document.getElementById("seleccion").value;
     
 
@@ -79,9 +85,8 @@ function getUrlParameters(parameter, staticURL, decode){
         $.get(endpoint,function(cliente){
             userBD=cliente.cedula;
             passBD=cliente.contraseña;
-            alert("Contraseña ingresada: "+pass+"  usuario ingresado: "+user+"  usuario "+userBD);
             if(userBD==user && pass==passBD){
-                alert("Datos Correcto....Iniciando sesion")
+                alert("Datos Correctos\nIniciando sesion")
                 window.location="perfil_Usuario.html?id="+userBD+"&rol=cliente";
             }else{
                alert("Datos incorrectos, intentelo de nuevo: \n"+user);
@@ -89,14 +94,32 @@ function getUrlParameters(parameter, staticURL, decode){
         })
     }
     else if(parseInt(seleccion,10)==2){
-        alert("Sus datos de inicio de seccion son los siguientes: \nUsuario "+user+"\nContraseña: "+pass);
-        alert("Se ha iniciado sesion.")
-        window.location="perfil_Administrador.html?id="+user;
+        var endpoint="http://localhost:8080/admin/"+user;
+        console.log(endpoint);
+        $.get(endpoint,function(administrador){
+            userBD=administrador.cedula;
+            passBD=administrador.contraseña;
+            if(userBD==user && pass==passBD){
+                alert("Datos Correctos\nIniciando sesion")
+                window.location="perfil_Administrador.html?id="+userBD+"&rol=admin";
+            }else{
+               alert("Datos incorrectos, intentelo de nuevo: \n"+user);
+            }
+        })
     }
     else if(parseInt(seleccion,10)==3){
-        alert("Sus datos de inicio de seccion son los siguientes: \nUsuario "+user+"\nContraseña: "+pass);
-        alert("Se ha iniciado sesion.")
-        window.location="perfil_Administrador.html?id="+user;
+        var endpoint="http://localhost:8080/tienda/"+user;
+        $.get(endpoint,function(tienda){
+            if(tienda!=null)
+            userBD=tienda.ru;
+            passBD=tienda.contraseña;
+            if(userBD==user && pass==passBD){
+                alert("Datos Correctos\nIniciando sesion")
+                window.location="registrarSaldo.html?id="+userBD+"&rol=adminTienda";
+            }else{
+               alert("Datos incorrectos, intentelo de nuevo: \n"+user);
+            }
+        })
     }
     else{
         alert("No has seleccionado rol");

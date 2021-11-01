@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registrar Saldo con CSS</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Saldo con CSS</title>
+    <link rel="shortcut icon" href="Img/Logo.ico">
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script rel="javascript" type="text/javascript" src="js/ScriptRegistrarSaldo.js"></script>
     <link rel="stylesheet" type="text/css" href="bootstrap-5.1.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="Estilos/estilo_index.css">
     <script rel="javascript" type="text/javascript" src="bootstrap-5.1.1-dist/js/bootstrap.min.js"></script>
@@ -21,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="Perfil_Usuario.html" style="color: blue;">Perfil</a>
+                    <a class="nav-link" href="Perfil_Usuario.html" >Perfil</a>
                 </li>
             </ul>
         </div>
@@ -33,7 +36,9 @@
         <form> 
           <div class="registro">
             <label for="inputAddress" class="form-label">Id Tienda </label>
-            <input type="number" class="form-control" id="inputAddress" placeholder="Ingrese la Identificación de la Tienda" style="color: #7ebe70;">
+            <select id="tienda" class="form-select" aria-label="Default select example">
+              <option value="1" selected>Cedula de ciudadania</option>
+            </select>
             <label for="inputAddress" class="form-label">Cédula </label>
             <input type="number" class="form-control" id="inputAddress" placeholder="1234" style="color: #7ebe70;">
             <label for="inputAddress" class="form-label">Valor del Saldo </label>

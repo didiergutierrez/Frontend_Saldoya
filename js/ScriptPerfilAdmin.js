@@ -30,22 +30,19 @@ $().ready(function(){
         $("#registrarse").hide();
         $("#login").hide();
         $("#guardarCambios").hide();
-        var endpoint="http://localhost:8080/cliente/"+user;
-    $.get(endpoint,function(cliente){
-        var id;
-        id=cliente.id;
-        $("#id").val(id);
-        Nombre=cliente.nombreCompleto;
-        tipoDocumento=cliente.tipoDocumento;
-        correo=cliente.correo;
-        contraseña=cliente.contraseña;
-        telefono=cliente.numeroCelular;
-        direccion=cliente.direccion;
-        sexo=cliente.sexo;
-        saldo=cliente.saldo;
+        var endpoint="http://localhost:8080/admin/"+user;
+    $.get(endpoint,function(admin){
+        Nombre=admin.nombreCompleto;
+        tipoDocumento=admin.tipoDocumento;
+        correo=admin.correo;
+        contraseña=admin.contraseña;
+        telefono=admin.numeroCelular;
+        direccion=admin.direccion;
+        sexo=admin.sexo;
+        saldo=admin.saldo;
         alert("Bienvenido "+Nombre);
 
-        $("#NombreCliente").val(Nombre);
+        $("#nombre").val(Nombre);
         if(tipoDocumento=="CC"){
             $("#tipoDocumento option[value='"+1+"']").attr("selected", true);
         }
@@ -55,12 +52,11 @@ $().ready(function(){
         else{
             $("#tipoDocumento option[value='"+3+"']").attr("selected", true);
         }
-        $("#NumeroDocumento").val(user);
+        $("#cedula").val(user);
         $("#correo").val(correo);
         $("#contraseña").val(contraseña);
         $("#telefono").val(telefono);
         $("#direccion").val(direccion);
-        $("#saldoCliente").val(saldo);
         if(sexo=="masculino"){
             $("#sexo option[value='"+1+"']").attr("selected", true);
         }
@@ -80,14 +76,14 @@ $().ready(function(){
     
  });
 
-
+ 
  $(function(){
     
     $("#perfil").on("click",function(){
         var urlactual=window.location;
         var user = getUrlParameters("id", urlactual, true);
         var rol = getUrlParameters("rol", urlactual, true);
-        window.location="Perfil_Usuario.html?id="+user+"&rol="+rol;
+        window.location="Perfil_Administrador.html?id="+user+"&rol="+rol;
          })
     
     $("#inicio").on("click",function(){
@@ -115,15 +111,14 @@ $().ready(function(){
 
     $("#guardarCambios").on("click",function(e){
         e.preventDefault();
-        var nombreCliente=$("#NombreCliente").val();
+        var nombre=$("#nombre").val();
         var tipoDocumento=$("#tipoDocumento").val();
-        var numeroDocumento=$("#NumeroDocumento").val();
+        var cedula=$("#cedula").val();
         var correo=$("#correo").val();
         var contraseña=$("#contraseña").val();
         var telefono=$("#telefono").val();
         var direccion=$("#direccion").val();
         var sexo=$("#sexo").val();
-        var saldo=$("#saldoCliente").val();
         var contraseña1=$("#contraseña1").val();
         var contraseña2=$("#contraseña2").val();
         var td="";
@@ -137,9 +132,10 @@ $().ready(function(){
         else{
             td="CE";
         }
-
-        if(contraseña1==contraseña2){
-            contraseña=contraseña1;
+        if(contraseña1!="" && contraseña2!=""){
+            if(contraseña1==contraseña2){
+                contraseña=contraseña1;
+            }
         }
         else{
             alert("Las contraseñas no coinciden");
@@ -154,15 +150,15 @@ $().ready(function(){
         else{
             sexo="Otro"
         }
-        var endpoint="http://localhost:8080/cliente/"+numeroDocumento;
+        var endpoint="http://localhost:8080/admin/"+cedula;
         $.get(endpoint,function(cliente){
             var id=cliente.id;
-            fetch("http://localhost:8080/cliente",{
+            fetch("http://localhost:8080/admin",{
                 method:"POST",
                 mode:"cors",
                 cache:"no-cache",
                 headers:{"Content-type":"application/json"},
-                body:JSON.stringify({id:id,cedula:numeroDocumento,correo:correo,direccion:direccion,contraseña:contraseña,saldo:saldo,tipoDocumento:td,sexo:sexo,nombreCompleto:nombreCliente,numeroCelular:telefono})
+                body:JSON.stringify({id:id,cedula:cedula,correo:correo,direccion:direccion,contraseña:contraseña,tipoDocumento:td,sexo:sexo,nombreCompleto:nombre,numeroCelular:telefono})
 
             }).then(response=>response.json());
             $("#correo").attr("disabled",true);
@@ -174,7 +170,33 @@ $().ready(function(){
             $("#nuevaContraseña").hide();
             $("#editar").show();
             $("#info").css("height","70%");
-        })
+            })
     
-    })
+        })
+
+        $("#registrarTienda").on("click",function(e){
+            e.preventDefault();
+            var nombreTienda=$("#nombreTienda").val();
+            var RU=$("#RU").val();
+            var tipoNegocio=$("#tipoNegocio").val();
+            var contraseñaTienda=$("#contraseñaTienda").val();
+
+            fetch("http://localhost:8080/tienda",{
+                method:"POST",
+                mode:"cors",
+                cache:"no-cache",
+                headers:{"Content-type":"application/json"},
+                body:JSON.stringify({ru:RU,tipoNegocio:tipoNegocio,nombreTienda:nombreTienda,contraseña:contraseñaTienda})
+
+            }).then(response=>response.json());
+
+            $("#nombreTienda").val("");
+            $("#RU").val("");
+            $("#tipoNegocio").val("");
+            $("#contraseñaTienda").val("");
+
+
+
+        })
+
 });

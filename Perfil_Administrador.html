@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Página Principal con CSS</title>
   <link rel="shortcut icon" href="Img/Logo.ico">
+  <script src="jquery/jquery-3.6.0.min.js"></script>
+  <script rel="javascript" type="text/javascript" src="js/ScriptPerfilAdmin.js"></script>
   <link rel="stylesheet" type="text/css" href="bootstrap-5.1.1-dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="Estilos/estilo_index.css">
   <script rel="javascript" type="text/javascript" src="bootstrap-5.1.1-dist/js/bootstrap.min.js"></script>
@@ -29,10 +31,10 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="" href="Login.html">Iniciar sesion</a>
+                <a id="login" class="nav-link active" aria-current="" href="Login.html">Iniciar sesion</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="RegistrarCliente.html">Registrese</a>
+                <a id="registrarse" class="nav-link" href="RegistrarCliente.html">Registrese</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="Perfil_Usuario.html">Perfil</a>
@@ -49,11 +51,11 @@
           <div class="col-md-12">
             <div class="col-12">
               <label for="inputAddress" class="form-label">Nombre Completo</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Ingrese el nombre completo">
+              <input disabled type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre completo">
             </div>
             <div class="col-12">
               <label for="inputAddress" class="form-label">Tipo de documento</label>
-              <select class="form-select" aria-label="Default select example">
+              <select disabled id="tipoDocumento" class="form-select" aria-label="Default select example">
                 <option value="1" selected>Cedula de ciudadania</option>
                 <option value="2">Tarjeta de identidad</option>
                 <option value="3">Cedula de extranjeria</option>
@@ -61,46 +63,45 @@
             </div>
             <div class="col-12">
               <label for="inputAddress" class="form-label">Numero de documento</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="">
+              <input disabled type="text" class="form-control" id="cedula" placeholder="">
             </div>
           </div>
           <div class="col-md-12">
             <label for="inputEmail4" class="form-label">Correo</label>
-            <input type="email" class="form-control" id="inputEmail4">
+            <input disabled type="email" class="form-control" id="correo">
           </div>
           <div class="col-md-12">
             <label for="inputPassword4" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" disabled>
+            <input id="contraseña" type="password" class="form-control" disabled>
+          </div>
+          <div id="nuevaContraseña" class="col-md-12" style="display: none;">
+            <label for="inputPassword4" class="form-label">Nueva Contraseña</label>
+            <input id="contraseña1" type="password" class="form-control" placeholder="Ingrese la nueva contraseña">
+            <label for="inputPassword4" class="form-label">Confirmar Contraseña</label>
+            <input id="contraseña2" type="password" class="form-control" placeholder="Por favor digite su nueva contraseña">
           </div>
           <div class="col-12">
             <label for="inputAddress" class="form-label">Telefono</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Por favor ingrese su telefono" disabled>
+            <input type="text" class="form-control" id="telefono" placeholder="Por favor ingrese su telefono" disabled>
           </div>
           <div class="col-12">
             <label for="inputAddress" class="form-label">Direccion</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Por favor ingrese su direccion" disabled>
+            <input type="text" class="form-control" id="direccion" placeholder="Por favor ingrese su direccion" disabled>
           </div>
           <div class="col-12">
             <label for="inputAddress" class="form-label">Seleccione su sexo</label>
-            <select class="form-select" aria-label="Default select example">
+            <select disabled id="sexo" class="form-select" aria-label="Default select example">
               <option value="1" selected>Masculino</option>
               <option value="2">Femenino</option>
               <option value="3">Otro</option>
             </select>
           </div>
 
+          
           <div class="col-12">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Check me out
-              </label>
-            </div>
-          </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary">Cargar datos</button>
-            <button type="submit" class="btn btn-primary">Editar Perfil</button>
-            <button type="submit" class="btn btn-primary" >Guardar cambios</button>
+            <button id="editar" type="button" class="btn btn-primary">Editar Perfil</button>
+            <button id="guardarCambios" type="submit" class="btn btn-primary">Guardar cambios</button>
+            <button id="cerrarSesion" type="button" class="btn btn-primary">Cerrar sesion</button>
           </div>
         </form>
       </div>
@@ -112,20 +113,22 @@
 
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
           <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">Aca podras ver tu saldo</h5>
+            <h5 id="offcanvasRightLabel">Aca podras Registrar las tiendas aliadas</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <form>
               <div class="registro">
                   <label for="inputAddress" class="form-label"> Nombre de la Tienda </label>
-                  <input type="text" class="form-control " id="inputAddress" placeholder="Ingrese el Nombre de la Tienda" style="color: #7ebe70;">
+                  <input type="text" class="form-control " id="nombreTienda" placeholder="Ingrese el Nombre de la Tienda" style="color: #7ebe70;">
+                  <label for="inputAddress" class="form-label"> Registro Unico </label>
+                  <input type="text" class="form-control" id="RU" placeholder="Ingrese el numero de registro unico" style="color: #7ebe70;">
                   <label for="inputAddress" class="form-label"> Tipo de Negocio </label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="Ingrese el Tipo de Negocio" style="color: #7ebe70;">
+                  <input type="text" class="form-control" id="tipoNegocio" placeholder="Ingrese el Tipo de Negocio" style="color: #7ebe70;">
                   <label for="inputAddress" class="form-label"> Contraseña </label>
-                  <input type="password" class="form-control" id="inputAddress" placeholder="****Ingrese Contraseña****">
+                  <input type="password" class="form-control" id="contraseñaTienda" placeholder="****Ingrese Contraseña****">
                   <br>
-                  <button type="submit" class="btn btn-primary" style="float: right;"> Guardar Información </button>
+                  <button id="registrarTienda" type="submit" class="btn btn-primary" style="float: right;"> Guardar Información </button>
               </div>
           </form>
           </div>

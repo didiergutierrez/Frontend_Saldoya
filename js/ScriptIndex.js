@@ -2,6 +2,7 @@ $().ready(function(){
     var urlactual=window.location;
     try{
         var user = getUrlParameters("id", urlactual, true);
+        var rol= getUrlParameters("rol", urlactual, true);
     }
     catch{
         user=false;
@@ -13,6 +14,9 @@ $().ready(function(){
     else{
         $("#registrarse").hide();
         $("#inicioSesion").hide();
+        if(rol=="adminTienda"){
+            $("#perfil").val("Registrar Saldo");  
+        }
     }
 })
 
@@ -41,7 +45,15 @@ function getUrlParameters(parameter, staticURL, decode){
         var urlactual=window.location;
         var user = getUrlParameters("id", urlactual, true);
         var rol = getUrlParameters("rol", urlactual, true);
+        if(rol=="cliente"){
         window.location="Perfil_Usuario.html?id="+user+"&rol="+rol;
+        }
+        else if(rol=="admin"){
+        window.location="Perfil_Administrador.html?id="+user+"&rol="+rol;
+        }
+        else{
+            window.location="RegistrarSaldo.html?id="+user+"&rol="+rol;
+        }
          })
     
     $("#inicio").on("click",function(){
