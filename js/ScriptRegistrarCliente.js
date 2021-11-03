@@ -44,7 +44,7 @@ $(function(){
             headers:{"Content-type":"application/json"},
             body:JSON.stringify({cedula:numeroDocumento,correo:correo,direccion:direccion,contraseña:contraseña,saldo:saldo,tipoDocumento:td,sexo:sexo,nombreCompleto:nombreCliente,numeroCelular:telefono})
 
-        }).then(response=>response.json());
+        }).then(response=>response.json()).then(()=>alert("Cliente registrado correctamente"));
         
     })
 })

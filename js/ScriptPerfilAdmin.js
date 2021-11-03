@@ -57,14 +57,14 @@ $().ready(function(){
         $("#contraseña").val(contraseña);
         $("#telefono").val(telefono);
         $("#direccion").val(direccion);
-        if(sexo=="masculino"){
+        if(sexo=="Masculino"){
             $("#sexo option[value='"+1+"']").attr("selected", true);
         }
-        else if(sexo=="femenino"){
-            $("#tipoDocumento option[value='"+2+"']").attr("selected", true);
+        else if(sexo=="Femenino"){
+            $("#sexo option[value='"+2+"']").attr("selected", true);
         }
         else{
-            $("#tipoDocumento option[value='"+3+"']").attr("selected", true);
+            $("#sexo option[value='"+3+"']").attr("selected", true);
         }
        
     })
@@ -136,9 +136,12 @@ $().ready(function(){
             if(contraseña1==contraseña2){
                 contraseña=contraseña1;
             }
+            else{
+                alert("las contraseñas no coinciden");
+            }
         }
         else{
-            alert("Las contraseñas no coinciden");
+            alert("No se cambiara la contraseña");
         }
 
         if(sexo=="1"){
@@ -188,7 +191,7 @@ $().ready(function(){
                 headers:{"Content-type":"application/json"},
                 body:JSON.stringify({ru:RU,tipoNegocio:tipoNegocio,nombreTienda:nombreTienda,contraseña:contraseñaTienda})
 
-            }).then(response=>response.json());
+            }).then(response=>response.json()).then(()=>alert("Tienda creada correctamente"));
 
             $("#nombreTienda").val("");
             $("#RU").val("");

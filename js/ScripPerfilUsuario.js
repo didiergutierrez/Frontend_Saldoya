@@ -47,13 +47,15 @@ $().ready(function(){
 
         $("#NombreCliente").val(Nombre);
         if(tipoDocumento=="CC"){
+            alert(tipoDocumento);
             $("#tipoDocumento option[value='"+1+"']").attr("selected", true);
         }
         else if(tipoDocumento=="TI"){
+            alert("hola");
             $("#tipoDocumento option[value='"+2+"']").attr("selected", true);
         }
         else{
-            $("#tipoDocumento option[value='"+3+"']").attr("selected", true);
+            $("#tipoDocumento option[value='" + 3 +"']" ).attr("selected", true);
         }
         $("#NumeroDocumento").val(user);
         $("#correo").val(correo);
@@ -61,14 +63,14 @@ $().ready(function(){
         $("#telefono").val(telefono);
         $("#direccion").val(direccion);
         $("#saldoCliente").val(saldo);
-        if(sexo=="masculino"){
+        if(sexo=="Masculino"){
             $("#sexo option[value='"+1+"']").attr("selected", true);
         }
-        else if(sexo=="femenino"){
-            $("#tipoDocumento option[value='"+2+"']").attr("selected", true);
+        else if(sexo=="Femenino"){
+            $("#sexo option[value='"+2+"']").attr("selected", true);
         }
         else{
-            $("#tipoDocumento option[value='"+3+"']").attr("selected", true);
+            $("#sexo option[value='"+3+"']").attr("selected", true);
         }
        
     })
@@ -157,14 +159,20 @@ $().ready(function(){
         var endpoint="http://localhost:8080/cliente/"+numeroDocumento;
         $.get(endpoint,function(cliente){
             var id=cliente.id;
-            fetch("http://localhost:8080/cliente",{
+            try{
+                fetch("http://localhost:8080/cliente",{
                 method:"POST",
                 mode:"cors",
                 cache:"no-cache",
                 headers:{"Content-type":"application/json"},
                 body:JSON.stringify({id:id,cedula:numeroDocumento,correo:correo,direccion:direccion,contraseña:contraseña,saldo:saldo,tipoDocumento:td,sexo:sexo,nombreCompleto:nombreCliente,numeroCelular:telefono})
 
-            }).then(response=>response.json());
+            }).then(response=>response.json()).then(()=>alert("Actualizacion completada"));
+        }
+
+        catch{
+
+        }
             $("#correo").attr("disabled",true);
             $("#contraseña").attr("disabled",true);
             $("#telefono").attr("disabled",true);

@@ -15,7 +15,7 @@
   <body>
     <nav class="navbar navbar-expand-sm navbar-light rounded-pill" style="background-color: #f0e36f;">
       <div class="container-fluid">
-        <a class="navbar-brand" title="inicio" href="index.html"><img src="Img/logo.png" width="200" height="100" alt="Pagina de inicio" /></a>
+        <a class="navbar-brand manita" title="inicio" id="inicio"><img src="Img/logo.png" width="200" height="100" alt="Pagina de inicio" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
          data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
          aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="Perfil_Usuario.html" >Perfil</a>
+                    <a class="nav-link manita" id="perfil" >Perfil</a>
                 </li>
             </ul>
         </div>
@@ -33,19 +33,31 @@
 
     <div id="contenido">
       <div id="vistaPerfil1">
-        <form> 
-          <div class="registro">
-            <label for="inputAddress" class="form-label">Id Tienda </label>
-            <select id="tienda" class="form-select" aria-label="Default select example">
-              <option value="1" selected>Cedula de ciudadania</option>
-            </select>
-            <label for="inputAddress" class="form-label">Cédula </label>
-            <input type="number" class="form-control" id="inputAddress" placeholder="1234" style="color: #7ebe70;">
-            <label for="inputAddress" class="form-label">Valor del Saldo </label>
-            <input type="number" class="form-control" id="inputAddress" placeholder="Ingrese el Valor del Saldo" style="color: #7ebe70;">
-            <br>
-            <button type="submit" class="btn btn-primary" style="float: right;"> Guardar Información </button>
-          </div>
+        <form class="row g-3">
+
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Id Tienda </label>
+              <input disabled type="text" class="form-control col-8" id="idTienda" placeholder="Ingrese el id de la tienda" style="color: #7ebe70;">
+            </div>
+            <div class="col-md-10">
+              <label for="inputAddress" class="form-label">Cédula Cliente </label>
+              <input type="text" class="form-control" id="idCliente" placeholder="Ingrese el id del cliente" style="color: #7ebe70;">
+            </div>
+            <div class="col-md-2">
+              <label for="inputAddress" class="form-label"></label><br>
+              <button id="buscarCliente" type="button" class="btn btn-primary">Buscar Cliente</button>
+              <input type="text" id="habilitar" style="display: none;">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Valor del Saldo </label>
+              <input type="text" class="form-control" id="saldo" placeholder="Ingrese el valor del saldo" style="color: #7ebe70;">
+            </div>
+            <div class="col-12">
+              <br>
+              <button id="registrarSaldo" type="submit" class="btn btn-primary"> Registrar Saldo </button>
+              <button id="salir" type="button" class="btn btn-primary"> Salir </button>
+            </div>
+          
         </form>
       </div>
     </div>
